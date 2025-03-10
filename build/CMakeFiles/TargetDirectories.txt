@@ -1,3 +1,0 @@
-/home/viswaz/workspace/comp/build/CMakeFiles/compiler.dir
-/home/viswaz/workspace/comp/build/CMakeFiles/edit_cache.dir
-/home/viswaz/workspace/comp/build/CMakeFiles/rebuild_cache.dir
