@@ -61,7 +61,7 @@ statement:
 
 expression:
     NUMBER                  { $$ = createNumNode($1); }
-    | IDENTIFIER            { $$ = createVarNode($1); }
+    | IDENTIFIER            { $$ = createVarNode(strdup($1)); free($1); }
     | expression PLUS expression    { $$ = createOpNode(OP_ADD, $1, $3); }
     | expression MINUS expression   { $$ = createOpNode(OP_SUB, $1, $3); }
     | expression MULTIPLY expression { $$ = createOpNode(OP_MUL, $1, $3); }

@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/compiler.dir/src/main.c.o CMakeFiles/compiler.dir/src/ast/ast.c.o CMakeFiles/compiler.dir/src/semantic/semantic.c.o CMakeFiles/compiler.dir/src/codegen/codegen.c.o CMakeFiles/compiler.dir/src/symbol/symbol.c.o CMakeFiles/compiler.dir/lex.yy.c.o CMakeFiles/compiler.dir/parser.tab.c.o -o compiler  -lm 
