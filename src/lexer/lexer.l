@@ -20,15 +20,17 @@ int yywrap(void) {
 
 %%
 [ \t\n]                 ;
-[0-9]+                  { yylval.intValue = atoi(yytext); return NUMBER; }
-[a-zA-Z_][a-zA-Z0-9_]*  { SAVE_TOKEN; return IDENTIFIER; }
-"="                     { return ASSIGN; }
-"+"                     { return PLUS; }
-"-"                     { return MINUS; }
-"*"                     { return MULTIPLY; }
-"/"                     { return DIVIDE; }
-"("                     { return LPAREN; }
-")"                     { return RPAREN; }
-";"                     { return SEMICOLON; }
-.                       { REPORT_ERROR; }
+[0-9]+                  { yylval.intValue = atoi(yytext); printf("TOKEN: NUMBER (%s)\n", yytext);return NUMBER; }
+[a-zA-Z_][a-zA-Z0-9_]*  { SAVE_TOKEN; printf("TOKEN: IDENTIFIER (%s)\n", yytext);return IDENTIFIER; }
+"="                     { printf("TOKEN: IDENTIFIER (%s)\n", yytext);return ASSIGN; }
+"+"                     { printf("TOKEN: PLUS (+)\n");return PLUS; }
+"-"                     { printf("TOKEN: MINUS (-)\n");return MINUS; }
+"*"                     { printf("TOKEN: MULTIPLY (*)\n");return MULTIPLY; }
+"/"                     { printf("TOKEN: DIVIDE (/)\n");return DIVIDE; }
+"("                     { printf("TOKEN: LPAREN (()\n");return LPAREN; }
+")"                     { printf("TOKEN: RPAREN ())\n");return RPAREN; }
+";"                     { printf("TOKEN: SEMICOLON (;)\n");return SEMICOLON; }
+.                       { printf("Lexing Error: Unrecognized token '%s'\n",yytext);REPORT_ERROR; }
 %%
+
+
